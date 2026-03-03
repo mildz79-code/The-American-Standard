@@ -2,7 +2,7 @@ name: americanstandardshop
 label: American Standard Shop
 homepage: https://americanstandardshop.org/
 type: website
-status: active
+status: wip
 fetch:
   method: GET
   user_agent: Mozilla/5.0 (compatible; source-bot/1.0)
@@ -11,4 +11,5 @@ output:
   format: html
   path: source/americanstandardshop.org/index.html
 notes:
+  - Production dataset status is WIP.
   - Use scripts/fetch_source.py to refresh the local HTML snapshot.

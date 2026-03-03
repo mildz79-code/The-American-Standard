@@ -24,3 +24,10 @@ You can optionally pass a custom URL:
 ```bash
 python3 scripts/fetch_source.py --url https://americanstandardshop.org/
 ```
+
+## Production dataset status
+
+- **Status:** WIP
+- **Environment:** Production
+- **Dataset:** American Standard Shop source snapshot (`source/americanstandardshop.org/index.html`)
+
