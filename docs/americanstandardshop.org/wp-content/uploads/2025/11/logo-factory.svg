@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" version="1.1" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .st0 {
+        fill: #010101;
+      }
+    </style>
+  </defs>
+  <rect class="st0" x="318" y="317.3" width="38" height="98.9"></rect>
+  <polygon class="st0" points="412 429 362 429 312 429 262 429 212 429 168 429 168 465.6 506 465.6 506 429 462 429 412 429"></polygon>
+  <rect class="st0" x="218" y="317.3" width="38" height="98.9"></rect>
+  <rect class="st0" x="31" y="45.4" width="100" height="37.6"></rect>
+  <rect class="st0" x="6" y="429" width="150" height="37.6"></rect>
+  <path class="st0" d="M131,94.9H30L6,416.1h149l-24-321.3ZM75,298.5h-25v-24.7h25v24.7ZM75,224.4h-25v-24.7h25v24.7ZM75,150.2h-25v-24.7h25v24.7ZM112,336.1h-25v-24.7h25v24.7ZM112,261.9h-25v-24.7h25v24.7ZM112,187.8h-25v-24.7h25v24.7Z"></path>
+  <path class="st0" d="M429,241.2c-2,2-5,2-7,1-2-1-4-3-4-5.9v-60.3l-77,65.2c-2,1-4,2-6,1-2-1-4-3-4-4.9l-11-63.3-79,67.2c-2,2-4,2-7,1-2-1-4-3-4-5.9v-60.3l-75,63.3,13,177h38v-104.8c0-3,3-5.9,6-5.9h50c3,0,6,3,6,5.9v104.8h38v-104.8c0-3,3-5.9,6-5.9h50c3,0,6,3,6,5.9v104.8h38v-104.8c0-3,3-5.9,6-5.9h50c3,0,6,3,6,5.9v104.8h38v-240.2l-77,65.2Z"></path>
+  <rect class="st0" x="418" y="317.3" width="38" height="98.9"></rect>
+</svg>
