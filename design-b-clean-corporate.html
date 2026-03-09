@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>American Standard Apparel — Design B: Clean Corporate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1B2A5C;
+      --navy-light: #243570;
+      --red: #B22234;
+      --white: #ffffff;
+      --off-white: #F8F9FA;
+      --border: #E5E7EB;
+      --text: #111827;
+      --muted: #6B7280;
+      --light: #F3F4F6;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text);
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--navy);
+      padding: 8px 24px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.85);
+    }
+    .topbar span { color: #fff; font-weight: 600; }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo img { height: 40px; width: 40px; object-fit: contain; }
+    .nav-logo-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .nav-logo-text small {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links a.active { color: var(--navy); font-weight: 600; }
+    .nav-links .btn-nav {
+      background: var(--navy);
+      color: var(--white);
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .nav-links .btn-nav:hover { background: var(--navy-light); }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--navy); display: block; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-left {}
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--light);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--red);
+      border-radius: 50%;
+      display: block;
+    }
+    .hero-title {
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+    .hero-title .accent { color: var(--red); }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 440px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      padding: 13px 28px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1.5px solid var(--border);
+      transition: border-color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--navy); }
+    .hero-trust {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-trust-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .hero-trust-badges {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .hero-trust-badges img {
+      height: 32px;
+      width: 32px;
+      object-fit: contain;
+      opacity: 0.7;
+      filter: grayscale(30%);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+    .hero-image-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(27,42,92,0.15);
+      background: var(--light);
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-stat-card {
+      position: absolute;
+      bottom: -20px;
+      left: -24px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .hero-stat-card .stat-num {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .hero-stat-card .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ── RED ACCENT ── */
+    .red-line { height: 3px; background: var(--red); width: 100%; }
+
+    /* ── CERTIFICATIONS ── */
+    .certs-section {
+      background: var(--off-white);
+      padding: 80px 24px;
+    }
+    .section-header {
+      max-width: 1200px;
+      margin: 0 auto 48px;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+    .section-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .certs-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .cert-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 32px 20px 28px;
+      border: 1px solid var(--border);
+      position: relative;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .cert-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--red);
+      border-radius: 0 0 10px 10px;
+    }
+    .cert-card:hover { box-shadow: 0 8px 28px rgba(27,42,92,0.1); transform: translateY(-3px); }
+    .cert-card img {
+      width: 64px; height: 64px;
+      object-fit: contain;
+      margin-bottom: 18px;
+    }
+    .cert-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .cert-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── STATS ── */
+    .stats-section {
+      background: var(--navy);
+      padding: 60px 24px;
+    }
+    .stats-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+    .stat-item {
+      background: var(--navy);
+      padding: 40px 32px;
+      text-align: center;
+    }
+    .stat-item .num {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-item .num span { color: var(--red); }
+    .stat-item .label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 56px 24px 28px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-brand .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .footer-brand img { width: 40px; height: 40px; object-fit: contain; }
+    .footer-brand-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--navy); }
+    .footer-contact p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .footer-contact a { color: var(--muted); text-decoration: none; }
+    .footer-contact a:hover { color: var(--navy); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 24px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: var(--muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding: 60px 24px; }
+      .hero-right { display: none; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+    }
+    @media (max-width: 480px) {
+      .certs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span>TAA &bull; BAA &bull; GSA Schedule</span> &mdash; Government Compliant American-Made Uniforms
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="https://americanstandardshop.org/wp-content/uploads/2025/11/Logo-ASA-512x512-1.png" alt="ASA Logo">
+        <div class="nav-logo-text">
+          American Standard
+          <small>Apparel</small>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/about-us/">About Us</a></li>
+        <li><a href="/our-mission/">Our Mission</a></li>
+        <li><a href="/products-2/">Product Line</a></li>
+        <li><a href="/polo-shirt/" class="btn-nav">Shop Uniforms</a></li>
+      </ul>
+      <div class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">Government Approved Supplier</div>
+      <h1 class="hero-title">
+        The <span class="accent">American</span><br>
+        Standard for<br>
+        Professional Wear
+      </h1>
+      <p class="hero-sub">
+        TAA and BAA compliant uniforms built for government agencies, healthcare, and corporate teams. Proudly made in the USA.
+      </p>
+      <div class="hero-actions">
+        <a href="/products-2/" class="btn-primary">View Product Line</a>
+        <a href="/our-mission/" class="btn-outline">Our Mission</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-label">Certified &amp; Compliant:</span>
+        <div class="hero-trust-badges">
+          <img src="https://americanstandardshop.org/wp-content/uploads/2025/11/Logo-TAA-compliant.png" alt="TAA">
+          <img src="https://americanstandardshop.org/wp-content/uploads/2025/11/Logo-BAA-compliant.png" alt="BAA">
+          <img src="https://americanstandardshop.org/wp-content/uploads/2025/11/Logo-GSA-schedule.png" alt="GSA">
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-image-wrap">
+        <img src="https://americanstandardshop.org/wp-content/uploads/2025/11/products-2.jpg" alt="American Standard Apparel products">
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num">GSA</div>
+        <div class="stat-label">Schedule Approved</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RED LINE -->
+  <div class="red-line"></div>
+
+  <!-- CERTIFICATIONS -->
+  <section class="certs-section">
+    <div class="section-header">
+      <p class="section-label">Compliance &amp; Certifications</p>
+      <h2 class="section-title">Approved Across Every Sector</h2>
+      <p class="section-sub">Our uniforms meet the strictest government procurement standards.</p>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <img src="https://americanstandardshop.org/wp-content/uploads/2025/11/Logo-TAA-compliant.png" alt="TAA Compliant">
+        <h3>TAA Compliant</h3>
+        <p>Made in USA or Designated Countries</p>
+      </div>
+      <div class="cert-card">
+        <img src="https://americanstandardshop.org/wp-content/uploads/2025/11/Logo-BAA-compliant.png" alt="BAA Compliant">
+        <h3>BAA Compliant</h3>
+        <p>Made in USA</p>
+      </div>
+      <div class="cert-card">
+        <img src="https://americanstandardshop.org/wp-content/uploads/2025/11/Logo-GSA-schedule.png" alt="GSA Schedule">
+        <h3>GSA Schedule</h3>
+        <p>US Government Approved</p>
+      </div>
+      <div class="cert-card">
+        <img src="https://americanstandardshop.org/wp-content/uploads/2025/11/Logo-corporate-wear.png" alt="Corporate Wear">
+        <h3>Corporate Wear</h3>
+        <p>Professional Uniforms</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="num">100<span>%</span></div>
+        <div class="label">American Made</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">3<span>+</span></div>
+        <div class="label">Gov't Certifications</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">GSA</div>
+        <div class="label">Schedule Contract Holder</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="https://americanstandardshop.org/wp-content/uploads/2025/11/Logo-ASA-512x512-1.png" alt="ASA">
+          <span class="footer-brand-name">American Standard Apparel</span>
+        </div>
+        <p>Modern manufacturing for the modern American workforce. Compliant, capable, and committed to quality.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/our-mission/">Our Mission</a></li>
+          <li><a href="/products-2/">Product Line</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contact Us</h4>
+        <p>1365 N Knollwood Cir<br>Anaheim, CA 92801, USA<br><br>
+        <a href="mailto:contact@americanstandardshop.org">contact@americanstandardshop.org</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 American Standard Apparel. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
